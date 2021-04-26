@@ -28,7 +28,7 @@ Requests can be made using the URL.
 
 ## Testing
 
-You must first export the variables defined in the `.flaskenv` e.g., `export FAVORITE_HERO_NAME=Spider-Man`.
+You must first export the variables defined in the `.flaskenv` e.g., `export PUBLIC_API_KEY=1234`.
 
 ```bash
 cat .flaskenv | while read line; do export ${line}; done

@@ -1,7 +1,5 @@
 FLASK_APP=marvelapp
-FLASK_ENV=production
+FLASK_ENV=development
 BASE_URL=https://gateway.marvel.com/
 PUBLIC_API_KEY=aad7960bcbcc55a864170470a0eb4cc7
 PRIVATE_API_KEY=9e5a1ff22117d35aaedff618d40e038555e5da35
-FAVORITE_HERO_NAME=Spider-Man
-FAVORITE_HERO_ID=1009610

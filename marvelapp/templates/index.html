@@ -4,20 +4,18 @@
 </head>
 <body>
   <h1>Marvel Stories</h1>
-  <p>My favorite character is</p>
-  <h2>{{ hero_name }}</h2>
-  <p>He appeared in</p>
-  <h2>{{ story_name }}</h2>
-  <p><i>{{ story_description }}</i></p>
-  <p>Starring</p>
+  <p>Pick your favorite</p>
   <div>
-    {% for key, value in characters.items() %}
-    <figure>
-      <img src="{{value['img']}}" width='100px'/>
-      <figcaption>{{key}}</figcaption>
-    </figure>
-  {% endfor %}
+    <form action="{{ url_for('main.get_story') }}" method="POST">
+      <select name="hero_name">
+        <option value="Spider-Man">Spider-Man</option>
+        <option value="Deadpool">Deadpool</option>
+        <option value="Wolverine">Wolverine</option>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
   </div>
 </body>
-<footer>{{ attribution_text }}</footer>
+<footer>Data provided by Marvel. © 2021 MARVEL</footer>
 </html>

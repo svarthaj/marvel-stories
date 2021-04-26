@@ -9,4 +9,3 @@ def test_index(client):
     '''
     response = client.get('/')
     assert response.status_code == 200
-    assert os.environ.get('FAVORITE_HERO_NAME').encode() in response.data
