@@ -1,0 +1,23 @@
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+  <h1>Marvel Stories</h1>
+  <p>My favorite character is</p>
+  <h2>{{ hero_name }}</h2>
+  <p>He appeared in</p>
+  <h2>{{ story_name }}</h2>
+  <p><i>{{ story_description }}</i></p>
+  <p>Starring</p>
+  <div>
+    {% for key, value in characters.items() %}
+    <figure>
+      <img src="{{value['img']}}" width='100px'/>
+      <figcaption>{{key}}</figcaption>
+    </figure>
+  {% endfor %}
+  </div>
+</body>
+<footer>{{ attribution_text }}</footer>
+</html>
