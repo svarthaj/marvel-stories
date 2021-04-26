@@ -1,5 +1,5 @@
 FLASK_APP=marvelapp
-FLASK_ENV=development
+FLASK_ENV=production
 BASE_URL=https://gateway.marvel.com/
 PUBLIC_API_KEY=aad7960bcbcc55a864170470a0eb4cc7
 PRIVATE_API_KEY=9e5a1ff22117d35aaedff618d40e038555e5da35
