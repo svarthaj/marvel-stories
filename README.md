@@ -14,6 +14,10 @@ Use pip to install Marvel-Stories dependencies.
 python3 -m pip install -r requirements.txt
 ```
 
+## Env variables
+
+For now, the `.flaskenv` file contains bot API keys (public and private). This is not ideal, but for practical purposes I left it that way.
+
 ## Running
 
 Marvel-Stories runs on Flask.
