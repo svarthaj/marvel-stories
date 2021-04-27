@@ -1,6 +1,3 @@
-from marvelapp import create_app
-import os
-
 def test_index(client):
     '''
     GIVEN a Flask app
@@ -9,3 +6,13 @@ def test_index(client):
     '''
     response = client.get('/')
     assert response.status_code == 200
+
+def test_story(client):
+    '''
+    GIVEN a Flask app
+    WHEN the a hero name is posted at ('/story') 
+    THEN check that the response is valid
+    '''
+    response = client.post('/story', data={'hero_name': 'Spider-Man'})
+    assert response.status_code == 200
+    assert 'Spider-Man'.encode() in response.data
