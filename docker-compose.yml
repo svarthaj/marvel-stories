@@ -1,0 +1,11 @@
+version: "3.7"
+
+services: 
+    marvel-stories:
+        image: python:3.8-slim-buster
+        command: sh -c "python3 -m pip install -r requirements.txt && python3 -m flask run --host=0.0.0.0"  
+        ports: 
+            - 5000:5000
+        working_dir: /marvel-stories
+        volumes:
+            - ./:/marvel-stories

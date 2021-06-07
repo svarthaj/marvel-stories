@@ -16,14 +16,22 @@ def get_random_story(hero_id, total_stories):
 
 def parse_story(hero_name, story):
     story_info = {}
-    result = story['data']['results'][0]
-
-    story_info['hero_name'] = hero_name
-    story_info['title'] = result['title']
-    story_info['description'] = result['description'] if len(result['description']) > 0 else 'No description available.'
-    story_info['characters'] = parse_characters(result['characters'])
-    story_info['attribution_text'] = story['attributionText']
     
+    try:
+        result = story['data']['results'][0]
+
+        story_info['hero_name'] = hero_name
+        story_info['title'] = result['title']
+        story_info['description'] = result['description'] if len(result['description']) > 0 else 'No description available.'
+        story_info['characters'] = parse_characters(result['characters'])
+        story_info['attribution_text'] = story['attributionText']
+    except IndexError:
+        story_info['hero_name'] = hero_name
+        story_info['title'] = 'No title available'
+        story_info['description'] = 'No description available.'
+        story_info['characters'] = {}
+        story_info['attribution_text'] = story['attributionText'] 
+
     return story_info
 
 def get_story_info(hero_name):

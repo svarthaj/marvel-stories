@@ -43,5 +43,32 @@ With the service running as shown above, run the tests.
 pytest -v
 ```
 
+## Docker
+
+Marvel-stories is dockerized and you can run it two ways:
+
+### Default
+
+Make sure you have Docker installed in your machine then build the image with
+
+```bash
+docker build -t marvel-stories .
+```
+
+And then run the service with
+
+```bash
+docker run -dp 5000:5000 marvel-stories 
+```
+
+### Docker-compose
+
+Make sure you installed `docker-compose` in your machine and then simply run
+
+```bash
+docker-compose up
+```
+
 ## Built with
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [Docker](https://www.docker.com)
